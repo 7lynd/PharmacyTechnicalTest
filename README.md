@@ -38,10 +38,23 @@ Please commit as frequently as possible to make the review easier.
 
 We expect you to spend no more than 2 hours on this assignment. We value the quality of the end result, not how much time you have spent on it.
 
+## Installation
+
+To run the project, make sur to run before any test or start the command: 
+
+```sh
+yarn install 
+```
+
 ## Test
 
 To make sure that you will not break anything in the existing code, we added the result of the simulation in the _output.json_ file. Make sure that your code is able to generate a file with identical content. You can generate a new file by running the following command:
 
+```sh
+yarn test
+```
+
+## Start
 ```sh
 yarn start
 ```
