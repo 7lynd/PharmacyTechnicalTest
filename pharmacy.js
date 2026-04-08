@@ -38,6 +38,15 @@ export class Pharmacy {
             drug.benefit += 2;
           }
         }
+      } else if (drug.name === "Dafalgan") {
+        // Se degrade deux fois plus vite donc -2 et -4 apres expiration 
+        if (drug.benefit > 0) {
+          if (drug.expiresIn > 0) {
+            drug.benefit -= 2;
+          } else {
+            drug.benefit -= 4;
+          }
+        }
       } else {
         // Pour le cas d'un medicament normal, on applique une strategie de decrementation mais que si benefit est superieur a 0
         if (drug.benefit > 0) {
@@ -50,6 +59,7 @@ export class Pharmacy {
       }
 
       drug.expiresIn -= 1;
+      if (drug.benefit < 0) drug.benefit = 0;
     })
 
     return this.drugs;
